@@ -1,4 +1,4 @@
-import Employee
+from Employee import Employee
 print "Hello World!"
 
 "This would create first object of Employee class"
