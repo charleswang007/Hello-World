@@ -1,10 +1,12 @@
 from Employee import Employee
-print "Hello World!"
+import unittest
+print "testing the Employee class!"
 
-"This would create first object of Employee class"
-emp1 = Employee("Zara", 2000)
-"This would create second object of Employee class"
-emp2 = Employee("Manni", 5000)
-emp1.displayEmployee()
-emp2.displayEmployee()
-print "Total Employee %d" % Employee.empCount
+class BasicTest(unittest.TestCase):
+    def test_total_employee_count(self):
+        emp1 = Employee("Alice", 2000)
+        emp2 = Employee("Bob", 5000)
+        self.assertEqual(Employee.empCount, 2)
+
+if __name__ == '__main__':
+    unittest.main() 
