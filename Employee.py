@@ -3,7 +3,8 @@
 class Employee:
    'Common base class for all employees'
    empCount = 0
-   title_extension = {'Software Engineer':'001', 'Program Manager':'002', 'CEO':'003', 'CFO':'004', 'CTO':'005'}
+   title_extension = {'Software Engineer':'001', 'Program Manager':'002', 'CEO':'003', 'CFO':'004', 'CTO':'005', 'Secretary':'006'}
+
    def __init__(self, name, title, salary, rank):
       self.name = name
       self.title = title
@@ -22,3 +23,6 @@ class Employee:
 
    def getTitle(self):
       return self.title
+
+   def getExtension(self):
+      return Employee.title_extension[self.title]
