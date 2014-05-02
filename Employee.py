@@ -24,5 +24,8 @@ class Employee:
    def getTitle(self):
       return self.title
 
+   def getSalary(self):
+      return self.salary
+
    def getExtension(self):
       return Employee.title_extension[self.title]

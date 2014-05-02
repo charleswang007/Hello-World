@@ -1,13 +1,14 @@
 from Employee import Employee
+from Company import Company
 import unittest
 print "testing the Employee class!"
 
 class BasicTest(unittest.TestCase):
     
-    def test_total_employee_count(self):
+    def test_employee_salary(self):
         emp1 = Employee("Alice", title = "Software Engineer", salary = 2000, rank = 5)
         emp2 = Employee("Bob", title = "Program Manager", salary = 5000, rank = 4)
-        self.assertEqual(Employee.empCount, 8)
+        self.assertTrue(emp1.getSalary() < emp2.getSalary())
 
     def test_employee_rank(self):
         emp3 = Employee("Charlie", title = "CTO", salary = 3000, rank = 2)
@@ -23,6 +24,17 @@ class BasicTest(unittest.TestCase):
         emp7 = Employee("Gilbery", title = "Secretary", salary = 1500, rank = 5)
         emp8 = Employee("Henry", title = "Program Manager", salary = 5000, rank = 4)
         self.assertTrue(not emp7.getTitle() is emp8.getTitle())
+
+    def test_employee_extension(self):
+        emp7 = Employee("Gilbery", title = "Secretary", salary = 1500, rank = 5)
+        emp8 = Employee("Henry", title = "Program Manager", salary = 5000, rank = 4)
+        self.assertTrue(not emp7.getTitle() is emp8.getTitle())
+
+    def test_company_employee_count(self):
+        company1 = Company("Apple")
+        emp9 = Employee("Ian", title = "Program Manager", salary = 7000, rank = 4)
+        company1.addEmployee(emp9)
+        self.assertTrue(company1.getTotalNumOfEmployee() is 1)
 
 
 if __name__ == '__main__':
