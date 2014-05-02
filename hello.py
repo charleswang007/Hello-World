@@ -36,6 +36,14 @@ class BasicTest(unittest.TestCase):
         company1.addEmployee(emp9)
         self.assertTrue(company1.getTotalNumOfEmployee() is 1)
 
+    def test_company_employee_count2(self):
+        company2 = Company("Apple2")
+        emp10 = Employee("Jack", title = "Secretary", salary = 3000, rank = 3)
+        emp11 = Employee("Kevin", title = "CTO", salary = 53000, rank = 2)
+        company2.addEmployee(emp10)
+        company2.addEmployee(emp11)
+        self.assertTrue(company2.getTotalNumOfEmployee() is 2)
+
 
 if __name__ == '__main__':
     unittest.main() 
