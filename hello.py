@@ -44,6 +44,17 @@ class BasicTest(unittest.TestCase):
         company2.addEmployee(emp11)
         self.assertTrue(company2.getTotalNumOfEmployee() is 2)
 
+    def test_employee_job_hopping(self):
+        company3 = Company("Apple3")
+        company4 = Company("Apple4")
+        emp12 = Employee("Larry", title = "Software Enigineer", salary = 4000, rank = 3)
+        company3.addEmployee(emp12)
+        company3.removeEmployee(emp12)
+        company4.addEmployee(emp12)
+        self.assertTrue(company4.getTotalNumOfEmployee() is 1 and company3.getTotalNumOfEmployee() is 0)
+
+    
+
 
 if __name__ == '__main__':
     unittest.main() 
